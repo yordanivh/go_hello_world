@@ -1,10 +1,13 @@
 language: go
-
 go:
-- 1.x
-- "1.10"
 - 1.11.x
-- master
-
 script:
 - bash -x test_go.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: JKMV/eDJThaQUxZvtLHMJFTbqWo/puxoakoQPzIqKelK/IwKP9GI7y8Q4ZXKTVY/QGGMWKzRfmnwKPei4QqV3L6NXzTqfaBhz07wpRDTsphnFI1gR9boxEopZMpbCaZ37sodAb34Ce9wavE1FpFhr+v+ptyo11BmSKBpX+NENa0l4xehWaONZFPXL8pUJvhmtDvOXrLxhHQVNwwCSWXwTFzF//pJAbQ0TjLpElRJj9IOkkxezektnlna3JgHfl4s2ShuTgWSyFX3TFPWfDS5SFXXDyQBRf1ue8Pt3e0KcASmys7VeCBfnMMDa+LqRBh+diSKpP3u+ts+e97oiqEjHnTGgTxzw7vx9o4qY4L3IPqi5r0MSRYsJ0F+dqPoG6VWV0J8ykSxDf6lVZUsTkfd6UFIfDQWNDS8RAJJlRkm15nAYZfosk4PKqd9x+c9M7bQ4SaUR9FtnjcPG2jFw/oJbtRCGE6K5k53qoTZ2LBil0McWhBTWG0VLOr80E/m51SSdJmGngxdZaF1KLeHjZ8/RkQpCln2sbPOjgNsXHYxPruu5TPSMzYKxfaVE55Vc32OvLbH/RzyrkPcWH7He2vBFTPr7fzQUQ7JQTp1C4RYc5eTwVPrKxBXrP5+vJf5TyESSojim6Evcf7xd0jHiD2m1cphwhQK/fVhZ4LISigA0Go=
+  file: main
+  on:
+    repo: yordanivh/go_hello_world
+    tags: true
